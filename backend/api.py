@@ -1,11 +1,18 @@
-from flask import Flask
+from flask import Flask, request
 import os
 import requests
+import json
 
 app = Flask(__name__)
 
-@app.route('/')
-def getRecipesFromApi(availableIngredients, numRecipes):
+@app.route('/getRecipes')
+# def getRecipesFromApi(availableIngredients, numRecipes):
+def getRecipesFromApi():
+    availableIngredients = request.args.get('ingredients')
+    numRecipes = request.args.get('num')
+    print (numRecipes)
+    print (availableIngredients)
+
     url = 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients'
 
     params = {'number': str(numRecipes), 'ranking': '1', 'ignorePantry': 'true', 'ingredients': availableIngredients}
@@ -17,8 +24,9 @@ def getRecipesFromApi(availableIngredients, numRecipes):
 
     res = requests.request('GET', url, headers=headers, params=params)
 
-    # data = res.json()
-    return res
+    data = res.text
+    print (data)
+    return data
     # print(data)
 
     # Printing response to console
