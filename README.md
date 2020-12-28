@@ -1,2 +1,2 @@
 # Anyone Can Cook
-Python program that interacts with the Spoonacular API to give a list of recipes depending on what ingredients the user already has in their fridge.
+Website built with Python, Flask, JavaScript, and React that interacts with the Spoonacular API to give a list of recipes depending on what ingredients the user already has in their fridge.
