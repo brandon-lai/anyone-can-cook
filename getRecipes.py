@@ -1,5 +1,6 @@
 import requests
 from requests.api import head
+import os
 
 def getRecipesFromApi(availableIngredients, numRecipes):
     url = 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients'
@@ -8,7 +9,7 @@ def getRecipesFromApi(availableIngredients, numRecipes):
 
     headers = {
         'x-rapidapi-host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
-        'x-rapidapi-key': 'b7c4f968f6mshac8de0e5ac09817p186b7djsn7baceba10779'
+        'x-rapidapi-key': os.environ['APIKEY']
     }
 
     res = requests.request('GET', url, headers=headers, params=params)
