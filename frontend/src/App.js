@@ -26,7 +26,10 @@ function App() {
         <h1>Anyone Can Cook</h1>
         <ol>
           {recipes.map((recipe) => (
-            <li>{recipe.title}</li>
+            <div key={uuid()}>
+              <li>{recipe.title}</li>
+              <img src={recipe.image} alt={recipe.title}/>
+            </div>
           ))}
         </ol>
       </header>
