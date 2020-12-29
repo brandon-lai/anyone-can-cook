@@ -10,7 +10,7 @@ const SimpleInput = (props) => {
     }
 
     return (
-        <div className="gridItem">
+        <div>
             <form onSubmit={handleSubmit}>
                 <Input 
                     value={inputVal}

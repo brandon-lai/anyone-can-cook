@@ -26,12 +26,8 @@ code {
 .gridInput {
   display: inline-grid;
   position: relative;
-}
-
-.gridItem {
-  display: block;
-  margin-bottom: 10;
-  width: 100;
+  grid-auto-rows: 75px;
+  grid-auto-columns: 200px;
 }
 
 .recipes {
