@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import uuid from 'react-uuid';
 import Input from './components/input';
+import { Button } from '@material-ui/core';
 
 function App() {
 
@@ -41,14 +42,16 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Anyone Can Cook</h1>
-        <Input returnVal={getInput} num='1' />
-        <Input returnVal={getInput} num='2' />
-        <Input returnVal={getInput} num='3' />
-        <Input returnVal={getInput} num='4' />
-        <Input returnVal={getInput} num='5' />
-        <button onClick={getRecipes}>Get Recipes!</button>
-        <ol>
+        <h1 className="title">Anyone Can Cook!</h1>
+        <div className="gridInput">
+          <Input returnVal={getInput} num='1' />
+          <Input returnVal={getInput} num='2' />
+          <Input returnVal={getInput} num='3' />
+          <Input returnVal={getInput} num='4' />
+          <Input returnVal={getInput} num='5' />
+          <Button variant="contained" color="primary" onClick={getRecipes}>Get Recipes!</Button>
+        </div>
+        <ol className="recipes">
           {recipes.map((recipe) => (
             <div key={uuid()}>
               <li>{recipe.title}</li>

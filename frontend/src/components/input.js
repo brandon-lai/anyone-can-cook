@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Input } from '@material-ui/core';
 
-const Input = (props) => {
+const SimpleInput = (props) => {
     const [inputVal, setInputVal] = useState('');
 
     const handleSubmit = (e) => {
@@ -9,9 +10,9 @@ const Input = (props) => {
     }
 
     return (
-        <div className="input">
+        <div className="gridItem">
             <form onSubmit={handleSubmit}>
-                <input 
+                <Input 
                     value={inputVal}
                     onChange={event => setInputVal(event.target.value)}
                     onBlur={handleSubmit}
@@ -22,4 +23,4 @@ const Input = (props) => {
     );
 };
 
-export default Input;
+export default SimpleInput;
